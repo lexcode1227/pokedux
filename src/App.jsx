@@ -6,11 +6,11 @@ import logo from "./statics/logo-pokedux.svg"
 import Searcher from './Components/Searcher'
 import PokemonList from './Components/PokemonList'
 import {getPokemonsWithDetails, setLoading} from './actions'
-import { useDispatch, useSelector } from 'react-redux'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 
 function App() {
-  const pokemons = useSelector(state => state.pokemons);
-  const loading = useSelector(state => state.loading);
+  const pokemons = useSelector(state => state.data.pokemons, shallowEqual);
+  const loading = useSelector(state => state.ui.loading);
   const dispatch = useDispatch();
 
   useEffect(()=> {
