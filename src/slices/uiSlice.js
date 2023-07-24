@@ -10,7 +10,7 @@ export const uiSlice = createSlice({
     reducers: {
         setLoading: (state, action) => {
             state.loading = action.payload;
-        }
+        },
     }
 })
 
